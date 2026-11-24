@@ -170,6 +170,10 @@ p { margin: 0 0 1em; }
 .form input, .form select, .form textarea { font: inherit; color: var(--white); background: var(--navy-800); border: 1px solid #2E4366; border-radius: var(--radius-sm); padding: 12px 14px; min-height: 48px; }
 .form input:focus, .form select:focus, .form textarea:focus { outline: none; border-color: var(--cyan); box-shadow: 0 0 0 3px rgba(66,200,232,0.2); }
 .form .hp { position: absolute; left: -9999px; }
+.form-status:empty { display: none; }
+.form-status { color: #FCA5A5; margin-top: 12px; }
+.form button[disabled] { opacity: 0.7; cursor: progress; }
+[hidden] { display: none !important; }
 .contact-split { grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); }
 .contact-aside { display: grid; gap: 20px; }
 

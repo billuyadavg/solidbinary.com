@@ -7,7 +7,7 @@ Built with Jekyll and hosted on GitHub Pages at https://solidbinary.com.
 
 | What | Where |
 |---|---|
-| Email, booking link, Formspree form, LinkedIn | `_config.yml` (top section) |
+| Booking link, contact form endpoint, LinkedIn | `_config.yml` (top section) |
 | Navigation menu | `_data/navigation.yml` |
 | Services (one file each) | `_services/*.md` |
 | Process steps | `_data/process.yml` |
@@ -30,11 +30,13 @@ Your content in Markdown…
 
 Commit and push; GitHub Pages rebuilds automatically in about a minute.
 
-## Turn on the contact form
+## Contact form
 
-1. Create a free form at https://formspree.io using the email that should receive inquiries.
-2. Copy the form ID (the part after `https://formspree.io/f/`).
-3. Put it in `_config.yml` as `formspree_id: "abcdwxyz"`.
+The form posts to a Google Apps Script web app ("SolidBinary Contact Form") bound to the
+Google Sheet "SolidBinary Website Inquiries". Each submission adds a row to the `Inquiries`
+tab and emails the Google account owner (reply goes straight to the sender).
+The web app URL is `form_endpoint` in `_config.yml`. If you change the script, use
+Deploy → Manage deployments → Edit → New version so the URL stays the same.
 
 ## Preview locally (optional)
 

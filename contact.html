@@ -9,8 +9,8 @@ lead: Have a product idea? Looking to implement AI? Want to automate your busine
 <section class="section">
   <div class="container split contact-split">
     <div>
-      {% if site.formspree_id != "" %}
-      <form class="form card" action="https://formspree.io/f/{{ site.formspree_id }}" method="POST">
+      {% if site.form_endpoint != "" %}
+      <form class="form card" id="inquiry-form" action="{{ site.form_endpoint }}" method="POST">
         <h2 class="card-h">Project inquiry</h2>
         <div class="form-grid">
           <label>Full name<input name="name" type="text" autocomplete="name" required></label>
@@ -45,16 +45,22 @@ lead: Have a product idea? Looking to implement AI? Want to automate your busine
           </label>
           <label class="full">Project description<textarea name="message" rows="6" required placeholder="What are you building or trying to improve?"></textarea></label>
           <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <input type="hidden" name="page" value="{{ page.url | absolute_url }}">
         </div>
         <button class="btn btn-primary" type="submit">Submit Project Inquiry</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
         <p class="muted small">Every great solution starts with a conversation.</p>
       </form>
-      {% else %}
+      <div class="card form-success" id="inquiry-success" hidden>
+        <h2 class="card-h">Thank you, we've received your inquiry.</h2>
+        <p>We'll review your project details and reply within two business days.</p>
+        {% if site.booking_url != "" %}<p><a class="btn btn-ghost" href="{{ site.booking_url }}" target="_blank" rel="noopener">Book a call now</a></p>{% endif %}
+      </div>
+      {% elsif site.booking_url != "" %}
       <div class="card">
         <h2 class="card-h">Tell us about your project</h2>
-        <p>Email us a few lines about what you're building or trying to improve, and we'll get back to you.</p>
-        <p><a class="btn btn-primary" href="mailto:{{ site.email }}?subject=Project%20inquiry">Email {{ site.email }}</a></p>
-        <p class="muted small">Every great solution starts with a conversation.</p>
+        <p>Book a free 30-minute business discussion to talk through what you're building or trying to improve.</p>
+        <p><a class="btn btn-primary" href="{{ site.booking_url }}" target="_blank" rel="noopener">Book a call</a></p>
       </div>
       {% endif %}
     </div>
@@ -62,7 +68,7 @@ lead: Have a product idea? Looking to implement AI? Want to automate your busine
       {% if site.booking_url != "" %}
       <div class="card">
         <h2 class="card-h">Prefer to talk?</h2>
-        <p>Book a free 30-minute discovery call to discuss your goals and possible approaches.</p>
+        <p>Book a free 30-minute business discussion to talk through your goals and possible approaches.</p>
         <a class="btn btn-ghost" href="{{ site.booking_url }}" target="_blank" rel="noopener">Book a call</a>
       </div>
       {% endif %}
@@ -74,11 +80,7 @@ lead: Have a product idea? Looking to implement AI? Want to automate your busine
           <li>A clear proposal with scope, approach, and engagement options.</li>
         </ol>
       </div>
-      <div class="card">
-        <h2 class="card-h">Email</h2>
-        <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
-        <p class="muted small">We work with clients in India and internationally.</p>
-      </div>
+      <p class="muted small">We work with clients in India and internationally.</p>
     </aside>
   </div>
 </section>

@@ -21,6 +21,32 @@
     }
   }
 
+  // Contact form: submit to Google Apps Script without leaving the page
+  var form = document.getElementById('inquiry-form');
+  if (form && window.fetch && window.URLSearchParams) {
+    form.addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      if (!form.reportValidity()) return;
+      var btn = form.querySelector('button[type="submit"]');
+      var status = form.querySelector('.form-status');
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+      status.textContent = '';
+      var body = new URLSearchParams(new FormData(form));
+      fetch(form.action, { method: 'POST', mode: 'no-cors', body: body })
+        .then(function () {
+          form.hidden = true;
+          var ok = document.getElementById('inquiry-success');
+          if (ok) { ok.hidden = false; ok.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+        })
+        .catch(function () {
+          btn.disabled = false;
+          btn.textContent = 'Submit Project Inquiry';
+          status.textContent = 'Something went wrong. Please check your connection and try again.';
+        });
+    });
+  }
+
   // Subtle reveal on scroll
   if ('IntersectionObserver' in window) {
     var items = document.querySelectorAll('.card, .service-row, .process-step, .cta-band');
