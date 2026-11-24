@@ -1,0 +1,25 @@
+---
+title: Insights
+description: Practical articles on Agentic AI, automation, SaaS engineering, and AI adoption from SolidBinary.
+eyebrow: Insights
+hero_title: Practical Thinking on AI and Engineering.
+lead: Honest, hands-on articles about Agentic AI, automation, and building software products, including the limitations.
+---
+<section class="section">
+  <div class="container">
+    {% if site.posts.size > 0 %}
+    <div class="grid grid-3">
+      {% for post in site.posts %}
+      <a class="card card-link" href="{{ post.url | relative_url }}">
+        <span class="muted small">{{ post.date | date: "%-d %b %Y" }}</span>
+        <h2 class="card-h">{{ post.title }}</h2>
+        <p>{{ post.description }}</p>
+      </a>
+      {% endfor %}
+    </div>
+    {% else %}
+    <p class="muted center">Articles are coming soon.</p>
+    {% endif %}
+  </div>
+</section>
+{% include cta.html %}

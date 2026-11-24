@@ -1,0 +1,18 @@
+- short: Discover
+  title: Discovery & Understanding
+  text: We understand your business, goals, challenges, and current technology environment.
+- short: Strategize
+  title: Strategy & Planning
+  text: We identify opportunities, recommend solutions, define the technical architecture, and establish an execution roadmap.
+- short: Design & Build
+  title: Design & Development
+  text: We design and engineer the product, application, or AI workflow.
+- short: Implement
+  title: Integration & Implementation
+  text: We connect the solution with your existing systems and deploy it into your operating environment.
+- short: Validate
+  title: Testing & Validation
+  text: We validate functionality, performance, security, and business requirements.
+- short: Optimize
+  title: Optimization & Growth
+  text: We continuously improve, maintain, and scale the solution as your business evolves.

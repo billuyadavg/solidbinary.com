@@ -1,0 +1,18 @@
+---
+layout: default
+---
+<article>
+  <section class="page-hero">
+    <div class="container narrow">
+      <p class="eyebrow"><a href="{{ '/insights/' | relative_url }}">Insights</a> · {{ page.date | date: "%-d %B %Y" }}</p>
+      <h1>{{ page.title }}</h1>
+      {% if page.description %}<p class="lead">{{ page.description }}</p>{% endif %}
+    </div>
+  </section>
+  <section class="section">
+    <div class="container narrow prose">
+      {{ content }}
+    </div>
+  </section>
+</article>
+{% include cta.html title="Exploring AI for your business?" text="We help teams find where AI creates real value, then build and run it." button="Discuss Your Project" %}

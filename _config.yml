@@ -1,0 +1,48 @@
+title: SolidBinary
+tagline: "Build Intelligent. Build Solid."
+description: "SolidBinary builds AI-powered business solutions, custom software, SaaS products, and Agentic AI workflows to help businesses automate operations and scale."
+url: "https://solidbinary.com"
+baseurl: ""
+lang: en
+
+# ---- Contact settings (edit these) ---------------------------------------
+# Business email shown on the site.
+email: "hello@solidbinary.com"
+# Booking link for "Book a call" buttons, e.g. https://calendly.com/your-name/30min
+# Leave empty to hide booking buttons.
+booking_url: ""
+# Formspree form ID (the part after https://formspree.io/f/). Leave empty to hide the form.
+formspree_id: ""
+# Optional social links
+linkedin_url: ""
+# --------------------------------------------------------------------------
+
+permalink: /insights/:year/:month/:title/
+timezone: Asia/Kolkata
+
+collections:
+  services:
+    output: true
+    permalink: /services/:name/
+
+defaults:
+  - scope: { path: "", type: services }
+    values: { layout: service }
+  - scope: { path: "", type: posts }
+    values: { layout: post }
+  - scope: { path: "" }
+    values: { layout: page }
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+feed:
+  path: insights/feed.xml
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor

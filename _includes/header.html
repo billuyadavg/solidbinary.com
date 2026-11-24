@@ -1,0 +1,18 @@
+<header class="site-header">
+  <div class="container nav">
+    <a class="logo" href="{{ '/' | relative_url }}" aria-label="SolidBinary home">{% include logo.html %}</a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="nav-menu" class="nav-menu" aria-label="Main">
+      <ul>
+        {% for item in site.data.navigation %}
+        {% assign active = false %}
+        {% if item.url == '/' %}{% if page.url == '/' %}{% assign active = true %}{% endif %}{% elsif page.url contains item.url %}{% assign active = true %}{% endif %}
+        <li><a href="{{ item.url | relative_url }}"{% if active %} aria-current="page"{% endif %}>{{ item.title }}</a></li>
+        {% endfor %}
+      </ul>
+      <a class="btn btn-primary btn-sm" href="{{ '/contact/' | relative_url }}">Discuss Your Project</a>
+    </nav>
+  </div>
+</header>

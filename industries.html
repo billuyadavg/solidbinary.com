@@ -1,0 +1,20 @@
+---
+title: Industries
+permalink: /industries/
+description: AI, automation, and software solutions adapted to IT, healthcare, education, financial services, e-commerce, logistics, professional services, and real estate.
+eyebrow: Industries
+hero_title: Technology That Adapts to Your Industry.
+lead: We design solutions around the workflows, operational requirements, and technology challenges of each organization. These are industries we're equipped to serve.
+---
+<section class="section">
+  <div class="container grid grid-2">
+    {% for ind in site.data.industries %}
+    <div class="card">
+      <h2 class="card-h">{{ ind.name }}</h2>
+      <p>{{ ind.text }}</p>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% include cta.html title="Don't see your industry?" text="Our approach starts with your workflows, so it carries across sectors. Tell us about yours." button="Start a Conversation" %}

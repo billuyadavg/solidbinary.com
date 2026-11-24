@@ -1,0 +1,84 @@
+---
+title: Contact
+permalink: /contact/
+description: Tell SolidBinary about your product idea, AI project, or automation need. Submit a project inquiry or book a call.
+eyebrow: Contact
+hero_title: Let's Build Something Intelligent.
+lead: Have a product idea? Looking to implement AI? Want to automate your business operations? Tell us what you're trying to achieve, and we'll help you explore the right technology approach.
+---
+<section class="section">
+  <div class="container split contact-split">
+    <div>
+      {% if site.formspree_id != "" %}
+      <form class="form card" action="https://formspree.io/f/{{ site.formspree_id }}" method="POST">
+        <h2 class="card-h">Project inquiry</h2>
+        <div class="form-grid">
+          <label>Full name<input name="name" type="text" autocomplete="name" required></label>
+          <label>Business email<input name="email" type="email" autocomplete="email" required></label>
+          <label>Company name<input name="company" type="text" autocomplete="organization"></label>
+          <label>Country<input name="country" type="text" autocomplete="country-name"></label>
+          <label class="full">Service required
+            <select name="service" id="service">
+              <option value="">Select a service</option>
+              {% assign services = site.services | sort: 'order' %}
+              {% for s in services %}<option>{{ s.short_title | default: s.title }}</option>{% endfor %}
+              <option>Not sure yet</option>
+            </select>
+          </label>
+          <label>Project budget (optional)
+            <select name="budget">
+              <option value="">Prefer not to say</option>
+              <option>Under US$5,000</option>
+              <option>US$5,000 – 15,000</option>
+              <option>US$15,000 – 50,000</option>
+              <option>Over US$50,000</option>
+            </select>
+          </label>
+          <label>Expected timeline (optional)
+            <select name="timeline">
+              <option value="">Not decided</option>
+              <option>As soon as possible</option>
+              <option>1–3 months</option>
+              <option>3–6 months</option>
+              <option>Just exploring</option>
+            </select>
+          </label>
+          <label class="full">Project description<textarea name="message" rows="6" required placeholder="What are you building or trying to improve?"></textarea></label>
+          <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        </div>
+        <button class="btn btn-primary" type="submit">Submit Project Inquiry</button>
+        <p class="muted small">Every great solution starts with a conversation.</p>
+      </form>
+      {% else %}
+      <div class="card">
+        <h2 class="card-h">Tell us about your project</h2>
+        <p>Email us a few lines about what you're building or trying to improve, and we'll get back to you.</p>
+        <p><a class="btn btn-primary" href="mailto:{{ site.email }}?subject=Project%20inquiry">Email {{ site.email }}</a></p>
+        <p class="muted small">Every great solution starts with a conversation.</p>
+      </div>
+      {% endif %}
+    </div>
+    <aside class="contact-aside">
+      {% if site.booking_url != "" %}
+      <div class="card">
+        <h2 class="card-h">Prefer to talk?</h2>
+        <p>Book a free 30-minute discovery call to discuss your goals and possible approaches.</p>
+        <a class="btn btn-ghost" href="{{ site.booking_url }}" target="_blank" rel="noopener">Book a call</a>
+      </div>
+      {% endif %}
+      <div class="card">
+        <h2 class="card-h">What happens next</h2>
+        <ol class="mini-steps">
+          <li>We review your message and reply within two business days.</li>
+          <li>A short call to understand your goals and constraints.</li>
+          <li>A clear proposal with scope, approach, and engagement options.</li>
+        </ol>
+      </div>
+      <div class="card">
+        <h2 class="card-h">Email</h2>
+        <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+        <p class="muted small">We work with clients in India and internationally.</p>
+      </div>
+    </aside>
+  </div>
+</section>

@@ -1,0 +1,134 @@
+---
+layout: default
+title: "Agentic AI, Software Development & Automation"
+description: "SolidBinary builds AI-powered business solutions, custom software, SaaS products, and Agentic AI workflows to help businesses automate operations and scale."
+---
+<section class="hero">
+  <div class="hero-grid-bg" aria-hidden="true"></div>
+  <div class="container hero-inner">
+    <p class="eyebrow">Agentic AI · Product Engineering · Business Automation</p>
+    <h1>We Build Intelligence Into Your&nbsp;Business.</h1>
+    <p class="lead">We design and develop intelligent software products, implement Agentic AI workflows, and automate business operations to help organizations innovate, operate efficiently, and scale.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="{{ '/contact/' | relative_url }}">Discuss Your Project</a>
+      <a class="btn btn-ghost" href="{{ '/services/' | relative_url }}">Explore Our Services</a>
+    </div>
+    <ul class="pill-row" aria-label="Core focus">
+      <li>Agentic AI</li><li>Product Engineering</li><li>Business Automation</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container split">
+    <div>
+      <p class="eyebrow">Why it matters</p>
+      <h2 class="section-title">Technology That Moves Your Business Forward</h2>
+    </div>
+    <div class="prose">
+      <p>Every business has opportunities to become smarter, faster, and more efficient.</p>
+      <p>At SolidBinary, we combine AI, software engineering, and business understanding to turn challenges into practical technology solutions.</p>
+      <p>Whether you're building a new digital product, modernizing existing systems, or introducing AI into your operations, we help you move from concept to implementation.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <p class="eyebrow">What we do</p>
+    <h2 class="section-title">Services built around outcomes</h2>
+    <div class="grid grid-3">
+      {% assign services = site.services | sort: 'order' %}
+      {% for s in services %}
+      <a class="card card-link" href="{{ s.url | relative_url }}">
+        <span class="card-icon">{% include icon.html name=s.icon %}</span>
+        <span class="card-num">{{ forloop.index | prepend: '0' }}</span>
+        <h3>{{ s.title }}</h3>
+        <p>{{ s.summary }}</p>
+      </a>
+      {% endfor %}
+    </div>
+    <p class="center"><a class="btn btn-ghost" href="{{ '/services/' | relative_url }}">Explore All Services</a></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container split">
+    <div>
+      <p class="eyebrow">Outcomes</p>
+      <h2 class="section-title">From Business Challenges to Intelligent Solutions</h2>
+      <p class="muted">Technology shouldn't exist just for the sake of innovation. It should solve problems, improve experiences, and deliver measurable results.</p>
+    </div>
+    <ul class="check-list check-list-lg">
+      <li>Reduce manual and repetitive operations</li>
+      <li>Improve business productivity</li>
+      <li>Build new digital revenue opportunities</li>
+      <li>Make information more accessible</li>
+      <li>Create scalable technology infrastructure</li>
+      <li>Enable intelligent decision-making</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <p class="eyebrow">Who we work with</p>
+    <h2 class="section-title">From first idea to enterprise scale</h2>
+    <div class="grid grid-3">
+      <div class="card"><h3>Startups</h3><p>From idea validation and MVP development to scalable product engineering, we help founders turn their vision into a working product.</p></div>
+      <div class="card"><h3>Small &amp; Medium Businesses</h3><p>Modernize operations, automate workflows, and adopt technology that supports business growth.</p></div>
+      <div class="card"><h3>Enterprises</h3><p>Implement intelligent systems, integrate existing applications, and develop scalable technology solutions.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <p class="eyebrow">How we work</p>
+    <h2 class="section-title">A clear path from idea to implementation</h2>
+    <ol class="steps">
+      {% for step in site.data.process %}
+      <li><span class="step-num">{{ forloop.index | prepend: '0' }}</span><strong>{{ step.short }}</strong></li>
+      {% endfor %}
+    </ol>
+    <p class="center"><a href="{{ '/our-approach/' | relative_url }}" class="text-link">See our approach →</a></p>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container split">
+    <div>
+      <p class="eyebrow">Why SolidBinary</p>
+      <h2 class="section-title">Not Just Consultants. Your Technology Execution Partner.</h2>
+      <p class="muted">We take ownership from identifying the opportunity through engineering, deployment, and continuous improvement.</p>
+    </div>
+    <ul class="check-list check-list-lg">
+      <li>Business-first technology decisions</li>
+      <li>End-to-end development capabilities</li>
+      <li>AI-first engineering mindset</li>
+      <li>Flexible engagement models</li>
+      <li>Scalable and maintainable solutions</li>
+      <li>Long-term technology partnership</li>
+    </ul>
+  </div>
+</section>
+
+{% if site.posts.size > 0 %}
+<section class="section">
+  <div class="container">
+    <p class="eyebrow">Insights</p>
+    <h2 class="section-title">Latest thinking</h2>
+    <div class="grid grid-3">
+      {% for post in site.posts limit: 3 %}
+      <a class="card card-link" href="{{ post.url | relative_url }}">
+        <span class="muted small">{{ post.date | date: "%-d %b %Y" }}</span>
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.description }}</p>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% include cta.html title="Your Next Big Idea Deserves the Right Technology Partner." text="Let's discuss what you're building, what you're trying to improve, and how intelligent technology can help." %}

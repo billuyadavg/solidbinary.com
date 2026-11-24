@@ -1,0 +1,14 @@
+<section class="section">
+  <div class="container">
+    <div class="cta-band">
+      <div>
+        <h2>{{ include.title | default: "Let's Build Something Intelligent." }}</h2>
+        <p>{{ include.text | default: "Tell us what you're building, what you're trying to improve, and how intelligent technology can help." }}</p>
+      </div>
+      <div class="cta-actions">
+        <a class="btn btn-primary" href="{{ '/contact/' | relative_url }}">{{ include.button | default: "Start a Conversation" }}</a>
+        {% if site.booking_url != "" %}<a class="btn btn-ghost" href="{{ site.booking_url }}" target="_blank" rel="noopener">Book a call</a>{% endif %}
+      </div>
+    </div>
+  </div>
+</section>
