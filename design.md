@@ -68,7 +68,9 @@ Defined as CSS custom properties in `assets/css/style.css` (`:root`).
 | `--navy-600` | `#14243D` | Cards, panels |
 | `--line` | `#22324F` | Borders, dividers |
 | `--blue` | `#3978F6` | Primary buttons, emphasis |
-| `--cyan` | `#42C8E8` | Accent, links, eyebrow labels, "Binary" in wordmark |
+| `--cyan` | `#42C8E8` | Accent, links, eyebrow labels |
+| `--logo-square` | `#60A5FA` | Logo: square "i" dot in *solid* |
+| `--logo-ring` | `#FB923C` | Logo: ring "i" dot in *binary* |
 | `--white` | `#F7F9FC` | Headings, high-emphasis text |
 | `--text` | `#D7DEEA` | Body text |
 | `--muted` | `#A3AFC2` | Secondary text |
@@ -79,7 +81,7 @@ Body and muted text are chosen to meet WCAG AA contrast (4.5:1) on navy backgrou
 
 | Role | Font | Weights |
 |---|---|---|
-| Headings, buttons, wordmark | **Manrope** | 600–800 |
+| Headings, buttons, logo wordmark | **Manrope** | 500–800 |
 | Body, UI | **Inter** | 400–600 |
 
 Both load from Google Fonts. Type scale is fluid with `clamp()`:
@@ -105,8 +107,15 @@ Headings use tight letter-spacing (`-0.02em`).
 
 ### 4.5 Logo
 
-- **Current:** text wordmark **Solid**Binary. "Solid" is Manrope 800 in white and "Binary" is Manrope 500 in cyan (`_includes/logo.html`). The favicon is an "SB" monogram on navy (`assets/img/favicon.svg`).
-- **Explorations:** 33 logo concepts across six rounds are on the SolidBinary Logo design board. The chosen mark will replace the wordmark include and the favicon.
+**Chosen logo: K · Dot Wordmark (typography only).**
+
+- Lowercase **solidbinary** set in Manrope: "solid" at weight 800 and "binary" at weight 500, letter-spacing −0.035em.
+- The idea is in the two "i" dots: the dot in *solid* is a **solid square** (blue `#60A5FA`) and the dot in *binary* is a **ring**, a binary "0" (orange `#FB923C`).
+- On dark backgrounds the letters are `#F7F9FC`. On light backgrounds use ink `#101828` with blue `#2563EB` and orange `#F97316` dots.
+- Built in HTML/CSS (`_includes/logo.html`, `.wordmark` styles in `style.css`) using dotless "ı" characters with positioned dots. Screen readers get "SolidBinary" via `.sr-only` text.
+- **App icon / favicon:** a blue square next to an orange ring on a navy tile (`assets/img/favicon.svg`).
+- Minimum size: about 18px font size, so the dots stay distinct.
+- The other concepts remain on the SolidBinary Logo design board for reference.
 
 ### 4.6 Components
 
@@ -242,7 +251,6 @@ The site shows no public email address by design.
 
 | Item | Status |
 |---|---|
-| Final logo mark | Pick from the design board; replace `_includes/logo.html` and favicon |
 | Projects & Capabilities page | Add once real demos or client projects can be shown |
 | Remaining starter articles | 1 of 12 planned articles published |
 | Company LinkedIn | Add URL to `linkedin_url` in `_config.yml` |

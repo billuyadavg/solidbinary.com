@@ -11,6 +11,8 @@
   --white: #F7F9FC;
   --text: #D7DEEA;
   --muted: #A3AFC2;
+  --logo-square: #60A5FA;
+  --logo-ring: #FB923C;
   --radius: 16px;
   --radius-sm: 10px;
   --container: 1200px;
@@ -49,11 +51,16 @@ p { margin: 0 0 1em; }
 .small { font-size: 0.875rem; }
 
 /* Wordmark */
-.wordmark { font-family: var(--font-head); font-size: 1.5rem; letter-spacing: -0.03em; color: var(--white); line-height: 1; }
-.wm-solid { font-weight: 800; }
-.wm-binary { font-weight: 500; color: var(--cyan); }
-.logo { display: inline-flex; align-items: center; }
-.logo:hover .wm-binary { color: #7FDBF0; }
+/* K · Dot Wordmark: square dot = solid, ring dot = binary 0 */
+.wordmark { font-family: var(--font-head); font-size: 1.6rem; font-weight: 800; letter-spacing: -0.035em; color: var(--white); line-height: 1; white-space: nowrap; }
+.wm-light { font-weight: 500; }
+.wm-i { position: relative; display: inline-block; }
+.wm-dot { position: absolute; left: 50%; top: -0.02em; width: 0.2em; height: 0.2em; margin-left: -0.1em; }
+.wm-dot-solid { background: var(--logo-square); border-radius: 0.03em; }
+.wm-dot-ring { box-sizing: border-box; border: 0.055em solid var(--logo-ring); border-radius: 50%; }
+.logo { display: inline-flex; align-items: center; color: var(--white); }
+.logo:hover { color: var(--white); }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 
 /* Header */
 .site-header { position: sticky; top: 0; z-index: 50; background: rgba(11, 18, 32, 0.86); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(34, 50, 79, 0.7); }
