@@ -3,7 +3,7 @@
 **Site:** https://solidbinary.com
 **Repository:** github.com/billuyadavg/solidbinary.com
 **Tagline:** Build Intelligent. Build Solid.
-**Last updated:** 24 November 2026
+**Last updated:** 25 November 2026
 
 ---
 
@@ -248,7 +248,45 @@ The site shows no public email address by design.
 3. New blog post: add `_posts/YYYY-MM-DD-title.md` with `title` and `description`.
 4. New service: add `_services/<name>.md` with the front matter fields above and an `order`.
 
-## 12. Open items
+## 12. Website review — 25 November 2026
+
+A review of the live site against its goal of turning visitors into qualified inquiries. An improved homepage design based on these findings is on the "SolidBinary Website – Review & Improved Homepage" design board.
+
+### What works
+
+- Clear positioning and consistent dark, premium look across every page.
+- Fast, simple static site; HTTPS, sitemap, per-page SEO titles in place.
+- Two working conversion paths: inquiry form (Sheet + email) and embedded booking page.
+- Honest content: no invented clients, numbers or testimonials.
+
+### Findings and fixes
+
+| # | Priority | Finding | Fix |
+|---|---|---|---|
+| 1 | High | **No proof of who is behind the company.** No founder, team, photo or track record, so a first-time visitor has little reason to trust a new firm. | Add a "Founder-led" section on the homepage and About page with photo, name, short background and real past work. |
+| 2 | High | **Hero is text-only.** The right half of the first screen is empty, and "intelligence" stays abstract. | Add an example agent-workflow card next to the headline showing what an agent actually does, including a human approval step. |
+| 3 | High | **Unclear first step.** Visitors don't know what happens after they get in touch or what it costs to start. | Add a "How projects start" section: free call → fixed-scope AI opportunity assessment → pilot, then scale. |
+| 4 | Medium | **Crowded navigation:** 8 links plus a button wrap on laptops. | Reduce to Services, How we work, About, Insights, FAQ + "Book a free call". Move Solutions and Industries under Services. |
+| 5 | Medium | **Seven equal service cards** leave one orphan card in a 3-column grid and bury the main differentiator. | Feature Agentic AI as one wide card, then the other six in a 3×2 grid. |
+| 6 | Medium | **Main button competes with a second CTA.** "Discuss Your Project" and "Book a call" appear with equal weight in different places. | Make "Book a free call" the single primary action; keep "Send a project inquiry" as the secondary one. |
+| 7 | Medium | **No answers to buyer questions** about cost, location, ownership and safety. | Add a short FAQ on the homepage. |
+| 8 | Medium | **Budget options are USD only**, while the main audience includes India. | Offer INR and USD ranges, or a currency-neutral "Small / Medium / Large" choice. |
+| 9 | Low | **One blog post.** The Insights section looks unfinished. | Publish 2–3 more articles from the planned list, or hide the homepage Insights block until there are three. |
+| 10 | Low | **No LinkedIn link** in the footer. | Add the company or founder LinkedIn URL to `linkedin_url`. |
+| 11 | Low | **Logo dots positioned by eye.** They can shift slightly at other sizes or if the font fails to load. | Replace the CSS dots with an SVG version of the wordmark for the header and footer. |
+| 12 | Low | **Generic headline.** "We Build Intelligence Into Your Business" could fit any AI agency. | Lead with the concrete outcome: "AI agents and software that do real work in your business." |
+
+### Improved homepage structure
+
+1. Header: 5 links + "Book a free call"
+2. Hero: concrete headline, two CTAs, example agent-workflow card
+3. Services: featured Agentic AI card + 6 services
+4. How projects start: free call → assessment → pilot
+5. Founder-led: photo, background, real work
+6. FAQ: 4 questions
+7. Final CTA: book a call / send an inquiry
+
+## 13. Open items
 
 | Item | Status |
 |---|---|
