@@ -3,10 +3,10 @@ title: Contact
 permalink: /contact/
 description: Tell SolidBinary about your product idea, AI project, or automation need. Submit a project inquiry or book a call.
 eyebrow: Contact
-hero_title: Let's Build Something Intelligent.
+hero_title: Let's build something intelligent.
 lead: Have a product idea? Looking to implement AI? Want to automate your business operations? Tell us what you're trying to achieve, and we'll help you explore the right technology approach.
 ---
-<section class="section">
+<section class="section section-tight">
   <div class="container split contact-split">
     <div>
       {% if site.form_endpoint != "" %}
@@ -47,14 +47,14 @@ lead: Have a product idea? Looking to implement AI? Want to automate your busine
           <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
           <input type="hidden" name="page" value="{{ page.url | absolute_url }}">
         </div>
-        <button class="btn btn-primary" type="submit">Submit Project Inquiry</button>
+        <button class="btn btn-primary" type="submit">Send project inquiry</button>
         <p class="form-status" role="status" aria-live="polite"></p>
         <p class="muted small">Every great solution starts with a conversation.</p>
       </form>
       <div class="card form-success" id="inquiry-success" hidden>
         <h2 class="card-h">Thank you, we've received your inquiry.</h2>
         <p>We'll review your project details and reply within two business days.</p>
-        {% if site.booking_url != "" %}<p><a class="btn btn-ghost" href="{{ '/book/' | relative_url }}">Book a call now</a></p>{% endif %}
+        {% if site.booking_url != "" %}<p><a class="btn btn-primary" href="{{ '/book/' | relative_url }}">Book a call now</a></p>{% endif %}
       </div>
       {% elsif site.booking_url != "" %}
       <div class="card">
@@ -69,7 +69,7 @@ lead: Have a product idea? Looking to implement AI? Want to automate your busine
       <div class="card">
         <h2 class="card-h">Prefer to talk?</h2>
         <p>Book a free 30-minute business discussion to talk through your goals and possible approaches.</p>
-        <a class="btn btn-ghost" href="{{ '/book/' | relative_url }}">Book a call</a>
+        <a class="btn btn-primary" href="{{ '/book/' | relative_url }}">Book a call</a>
       </div>
       {% endif %}
       <div class="card">
