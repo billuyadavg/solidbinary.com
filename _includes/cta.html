@@ -2,12 +2,12 @@
   <div class="container">
     <div class="cta-band">
       <div>
-        <h2>{{ include.title | default: "Let's Build Something Intelligent." }}</h2>
-        <p>{{ include.text | default: "Tell us what you're building, what you're trying to improve, and how intelligent technology can help." }}</p>
+        <h2>{{ include.title | default: "Let's find your first AI win." }}</h2>
+        <p>{{ include.text | default: "Book a free 30-minute call, or tell us about your project in two minutes." }}</p>
       </div>
       <div class="cta-actions">
-        <a class="btn btn-primary" href="{{ '/contact/' | relative_url }}">{{ include.button | default: "Start a Conversation" }}</a>
-        {% if site.booking_url != "" %}<a class="btn btn-ghost" href="{{ '/book/' | relative_url }}">Book a call</a>{% endif %}
+        {% if site.booking_url != "" %}<a class="btn btn-primary" href="{{ '/book/' | relative_url }}">Book a free call</a>{% endif %}
+        <a class="btn btn-ghost" href="{{ '/contact/' | relative_url }}">{{ include.button | default: "Send a project inquiry" }}</a>
       </div>
     </div>
   </div>

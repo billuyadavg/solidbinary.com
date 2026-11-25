@@ -146,7 +146,7 @@ Icons are inline stroke SVGs (`_includes/icon.html`), 24px, using `currentColor`
 
 | Page | URL | Purpose |
 |---|---|---|
-| Home | `/` | Positioning, services overview, outcomes, audiences, process, why us, latest insights |
+| Home | `/` | Simplified: hero with example agent workflow, services (Agentic AI featured), how projects start, FAQ, closing CTA |
 | About | `/about/` | Who we are, mission, vision, beliefs |
 | Services | `/services/` | All 7 services with capabilities |
 | Service detail ×7 | `/services/<name>/` | One page per service: description, capabilities, related services |
@@ -161,12 +161,12 @@ Icons are inline stroke SVGs (`_includes/icon.html`), 24px, using `currentColor`
 
 **Services (in order):** Agentic AI & Intelligent Systems · Custom Software Development · SaaS & Product Engineering · Business Process Automation · AI Consulting & Strategy · Cloud & Technology Engineering · Dedicated Development Teams.
 
-**Navigation:** Home, About, Services, Solutions, Industries, Our Approach, Insights, Contact, plus a "Discuss Your Project" button.
+**Navigation:** Services, How we work, About, Insights, Contact, plus a "Book a free call" button. Solutions and Industries stay reachable from the footer and service pages.
 
 ## 6. Conversion design
 
-- **Primary CTA everywhere:** "Discuss Your Project" → `/contact/`.
-- **Secondary CTA:** "Book a call" → `/book/`, which embeds the Google Calendar booking page (shown only when `booking_url` is set).
+- **Primary CTA everywhere:** "Book a free call" → `/book/` (embedded Google Calendar booking page).
+- **Secondary CTA:** "Send a project inquiry" → `/contact/`.
 - Service pages link to the contact page with `?service=<name>`, which preselects the service in the form.
 - Every page ends with a CTA band.
 
@@ -275,6 +275,10 @@ A review of the live site against its goal of turning visitors into qualified in
 | 10 | Low | **No LinkedIn link** in the footer. | Add the company or founder LinkedIn URL to `linkedin_url`. |
 | 11 | Low | **Logo dots positioned by eye.** They can shift slightly at other sizes or if the font fails to load. | Replace the CSS dots with an SVG version of the wordmark for the header and footer. |
 | 12 | Low | **Generic headline.** "We Build Intelligence Into Your Business" could fit any AI agency. | Lead with the concrete outcome: "AI agents and software that do real work in your business." |
+
+### Status (26 Nov 2026)
+
+Applied: #2 hero visual, #3 how projects start, #4 simpler navigation, #5 featured service, #6 single primary CTA, #7 FAQ, #8 currency-neutral budgets, #12 concrete headline. Still open: #1 founder section (needs photo and approval), #9 more articles, #10 LinkedIn, #11 SVG logo.
 
 ### Improved homepage structure
 

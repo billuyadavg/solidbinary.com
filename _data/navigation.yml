@@ -1,15 +1,9 @@
-- title: Home
-  url: /
-- title: About
-  url: /about/
 - title: Services
   url: /services/
-- title: Solutions
-  url: /solutions/
-- title: Industries
-  url: /industries/
-- title: Our Approach
+- title: How we work
   url: /our-approach/
+- title: About
+  url: /about/
 - title: Insights
   url: /insights/
 - title: Contact
