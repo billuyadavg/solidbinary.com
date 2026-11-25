@@ -112,7 +112,7 @@ Headings use tight letter-spacing (`-0.02em`).
 - Lowercase **solidbinary** set in Manrope: "solid" at weight 800 and "binary" at weight 500, letter-spacing −0.035em.
 - The idea is in the two "i" dots: the dot in *solid* is a **solid square** (blue `#60A5FA`) and the dot in *binary* is a **ring**, a binary "0" (orange `#FB923C`).
 - On dark backgrounds the letters are `#F7F9FC`. On light backgrounds use ink `#101828` with blue `#2563EB` and orange `#F97316` dots.
-- Built in HTML/CSS (`_includes/logo.html`, `.wordmark` styles in `style.css`) using dotless "ı" characters with positioned dots. Screen readers get "SolidBinary" via `.sr-only` text.
+- Delivered as outlined SVG (letters converted to vector paths from Manrope, so no font is needed): `assets/img/logo.svg` (for dark backgrounds) and `assets/img/logo-dark.svg` (for light backgrounds). Used in the header and footer via `_includes/logo.html` with alt text "SolidBinary". Regenerate with the Manrope font files if the wordmark ever changes.
 - **App icon / favicon:** a blue square next to an orange ring on a navy tile (`assets/img/favicon.svg`).
 - Minimum size: about 18px font size, so the dots stay distinct.
 - The other concepts remain on the SolidBinary Logo design board for reference.
@@ -278,7 +278,7 @@ A review of the live site against its goal of turning visitors into qualified in
 
 ### Status (26 Nov 2026)
 
-Applied: #2 hero visual, #3 how projects start, #4 simpler navigation, #5 featured service, #6 single primary CTA, #7 FAQ, #8 currency-neutral budgets, #12 concrete headline. Still open: #1 founder section (needs photo and approval), #9 more articles, #10 LinkedIn, #11 SVG logo.
+Applied: #2 hero visual, #3 how projects start, #4 simpler navigation, #5 featured service, #6 single primary CTA, #7 FAQ, #8 currency-neutral budgets, #12 concrete headline. Also applied: #1 founder section (homepage and About, content and photo from billuyadav.com), #10 LinkedIn link, #11 SVG logo. Still open: #9 more articles.
 
 ### Improved homepage structure
 
@@ -296,7 +296,6 @@ Applied: #2 hero visual, #3 how projects start, #4 simpler navigation, #5 featur
 |---|---|
 | Projects & Capabilities page | Add once real demos or client projects can be shown |
 | Remaining starter articles | 1 of 12 planned articles published |
-| Company LinkedIn | Add URL to `linkedin_url` in `_config.yml` |
 | Analytics | Add Google Analytics 4 / Search Console if wanted |
 | Legal review | Privacy and Terms are general summaries; review for your jurisdiction |
 | Domain auto-renew | Turn on in GoDaddy |
