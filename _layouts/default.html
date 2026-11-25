@@ -1,9 +1,10 @@
 <!doctype html>
-<html lang="{{ site.lang | default: 'en' }}">
+<html lang="{{ site.lang | default: 'en' }}" data-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script>(function(){try{var t=new URLSearchParams(location.search).get('theme');if(t){localStorage.setItem('sb-theme',t)}t=t||localStorage.getItem('sb-theme');if(t==='light'){document.documentElement.setAttribute('data-theme','light')}}catch(e){}})();</script>
+  <meta name="theme-color" content="#FFFFFF">
+  <script>(function(){try{var t=new URLSearchParams(location.search).get('theme');if(t){localStorage.setItem('sb-theme',t)}t=t||localStorage.getItem('sb-theme');if(t==='dark'){document.documentElement.removeAttribute('data-theme')}}catch(e){}})();</script>
   <link rel="icon" href="{{ '/assets/img/favicon.svg' | relative_url }}" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

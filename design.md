@@ -54,7 +54,9 @@ Every page should answer, in order:
 
 ### 4.1 Direction
 
-A dark, premium technology aesthetic: navy backgrounds, restrained electric-blue and cyan accents, large confident type, generous spacing, subtle motion. No neon overload, 3D clutter, robot imagery or stock photos.
+**Default theme: Clean light** (since 26 Nov 2026): white backgrounds, near-black text (`#101828`), blue buttons (`#2563EB`), deep-orange labels (`#C2410C`), soft grey borders. The light theme is applied by `data-theme="light"` on `<html>`; its overrides are the "Clean light theme" block at the end of `style.css`. The original **Midnight** dark theme (the tokens below) is still available: open any page with `?theme=dark` (remembered per browser; `?theme=light` switches back).
+
+Shared style: large confident type, generous spacing, subtle motion. No neon overload, 3D clutter, robot imagery or stock photos.
 
 ### 4.2 Color tokens
 
