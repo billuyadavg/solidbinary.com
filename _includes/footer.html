@@ -3,36 +3,36 @@
     <div class="footer-brand">
       <a class="logo" href="{{ '/' | relative_url }}">{% include logo.html %}</a>
       <p class="footer-tagline">{{ site.tagline }}</p>
-      <p class="muted">AI-first technology consulting and product engineering for startups, SMEs and enterprises in India and worldwide.</p>
+      <p class="muted">A founder-led practice building AI agents for sales, support and back-office work, for small and mid-sized companies in India and internationally.</p>
     </div>
     <div>
       <h2 class="footer-h">Services</h2>
       <ul class="footer-links">
         {% assign services = site.services | sort: 'order' %}
-        {% for s in services %}<li><a href="{{ s.url | relative_url }}">{{ s.short_title | default: s.title }}</a></li>{% endfor %}
+        {% for s in services %}<li><a href="{{ s.url | relative_url }}">{{ s.short_title }}</a></li>{% endfor %}
       </ul>
     </div>
     <div>
       <h2 class="footer-h">Company</h2>
       <ul class="footer-links">
-        <li><a href="{{ '/about/' | relative_url }}">About Us</a></li>
-        <li><a href="{{ '/solutions/' | relative_url }}">Solutions</a></li>
-        <li><a href="{{ '/industries/' | relative_url }}">Industries</a></li>
-        <li><a href="{{ '/our-approach/' | relative_url }}">Our Approach</a></li>
+        <li><a href="{{ '/about/' | relative_url }}">About</a></li>
+        <li><a href="{{ '/solutions/' | relative_url }}">Use cases</a></li>
+        <li><a href="{{ '/industries/' | relative_url }}">Where we've worked</a></li>
+        <li><a href="{{ '/our-approach/' | relative_url }}">How we work</a></li>
         <li><a href="{{ '/insights/' | relative_url }}">Insights</a></li>
       </ul>
     </div>
     <div>
       <h2 class="footer-h">Contact</h2>
       <ul class="footer-links">
-        <li><a href="{{ '/contact/' | relative_url }}">Project inquiry</a></li>
-        {% if site.booking_url != "" %}<li><a href="{{ '/book/' | relative_url }}">Book a call</a></li>{% endif %}
+        <li><a href="{{ '/contact/' | relative_url }}">Send an inquiry</a></li>
+        {% if site.booking_url != "" %}<li><a href="{{ '/book/' | relative_url }}" data-track="book_call_click">Book a free call</a></li>{% endif %}
         {% if site.linkedin_url != "" %}<li><a href="{{ site.linkedin_url }}" target="_blank" rel="noopener">LinkedIn</a></li>{% endif %}
       </ul>
     </div>
   </div>
   <div class="container footer-bottom">
     <p>© {{ site.time | date: '%Y' }} SolidBinary. All rights reserved.</p>
-    <p><a href="{{ '/privacy/' | relative_url }}">Privacy Policy</a> · <a href="{{ '/terms/' | relative_url }}">Terms</a></p>
+    <p><a href="{{ '/privacy/' | relative_url }}">Privacy policy</a> · <a href="{{ '/terms/' | relative_url }}">Terms</a></p>
   </div>
 </footer>

@@ -1,17 +1,17 @@
 ---
 title: Contact
 permalink: /contact/
-description: Tell SolidBinary about your product idea, AI project, or automation need. Submit a project inquiry or book a call.
+description: Tell SolidBinary where your team loses time. Send a short inquiry or book a free 30-minute call.
 eyebrow: Contact
-hero_title: Let's build something intelligent.
-lead: Have a product idea? Looking to implement AI? Want to automate your business operations? Tell us what you're trying to achieve, and we'll help you explore the right technology approach.
+hero_title: Tell me where your team loses time.
+lead: A few lines is enough. I'll reply within two business days, and if AI isn't the right fix, I'll say so.
 ---
 <section class="section section-tight">
   <div class="container split contact-split">
     <div>
       {% if site.form_endpoint != "" %}
       <form class="form card" id="inquiry-form" action="{{ site.form_endpoint }}" method="POST">
-        <h2 class="card-h">Project inquiry</h2>
+        <h2 class="card-h">Send an inquiry</h2>
         <div class="form-grid">
           <label>Full name<input name="name" type="text" autocomplete="name" required></label>
           <label>Business email<input name="email" type="email" autocomplete="email" required></label>
@@ -31,7 +31,7 @@ lead: Have a product idea? Looking to implement AI? Want to automate your busine
               <option>Small: under ₹4 lakh / US$5k</option>
               <option>Medium: ₹4–12 lakh / US$5–15k</option>
               <option>Large: ₹12–40 lakh / US$15–50k</option>
-              <option>Enterprise: above ₹40 lakh / US$50k</option>
+              <option>Above ₹40 lakh / US$50k</option>
             </select>
           </label>
           <label>Expected timeline (optional)
@@ -43,24 +43,25 @@ lead: Have a product idea? Looking to implement AI? Want to automate your busine
               <option>Just exploring</option>
             </select>
           </label>
-          <label class="full">Project description<textarea name="message" rows="6" required placeholder="What are you building or trying to improve?"></textarea></label>
+          <label class="full">How did you hear about us? (optional)<input name="source" type="text"></label>
+          <label class="full">What would you like help with?<textarea name="message" rows="6" required placeholder="Which task takes your team the most time? Roughly how often does it happen, and which tools are involved?"></textarea></label>
           <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
           <input type="hidden" name="page" value="{{ page.url | absolute_url }}">
         </div>
-        <button class="btn btn-primary" type="submit">Send project inquiry</button>
+        <button class="btn btn-primary" type="submit">Send inquiry</button>
         <p class="form-status" role="status" aria-live="polite"></p>
-        <p class="muted small">Every great solution starts with a conversation.</p>
+        <p class="muted small form-fallback" hidden>If the form keeps failing, message me on <a href="{{ site.linkedin_url }}" target="_blank" rel="noopener">LinkedIn</a>{% if site.booking_url != "" %} or <a href="{{ '/book/' | relative_url }}">book a call</a>{% endif %}.</p>
       </form>
       <div class="card form-success" id="inquiry-success" hidden>
-        <h2 class="card-h">Thank you, we've received your inquiry.</h2>
-        <p>We'll review your project details and reply within two business days.</p>
-        {% if site.booking_url != "" %}<p><a class="btn btn-primary" href="{{ '/book/' | relative_url }}">Book a call now</a></p>{% endif %}
+        <h2 class="card-h">Thanks, your inquiry has arrived.</h2>
+        <p>I'll read it and reply within two business days. If you'd rather talk sooner, pick a time below.</p>
+        {% if site.booking_url != "" %}<p><a class="btn btn-primary" href="{{ '/book/' | relative_url }}" data-track="book_call_click">Book a free call</a></p>{% endif %}
       </div>
       {% elsif site.booking_url != "" %}
       <div class="card">
         <h2 class="card-h">Tell us about your project</h2>
         <p>Book a free 30-minute business discussion to talk through what you're building or trying to improve.</p>
-        <p><a class="btn btn-primary" href="{{ '/book/' | relative_url }}">Book a call</a></p>
+        <p><a class="btn btn-primary" href="{{ '/book/' | relative_url }}" data-track="book_call_click">Book a free call</a></p>
       </div>
       {% endif %}
     </div>
@@ -68,16 +69,16 @@ lead: Have a product idea? Looking to implement AI? Want to automate your busine
       {% if site.booking_url != "" %}
       <div class="card">
         <h2 class="card-h">Prefer to talk?</h2>
-        <p>Book a free 30-minute business discussion to talk through your goals and possible approaches.</p>
-        <a class="btn btn-primary" href="{{ '/book/' | relative_url }}">Book a call</a>
+        <p>Book a free 30-minute call to talk through your goals and possible approaches.</p>
+        <a class="btn btn-primary" href="{{ '/book/' | relative_url }}" data-track="book_call_click">Book a free call</a>
       </div>
       {% endif %}
       <div class="card">
         <h2 class="card-h">What happens next</h2>
         <ol class="mini-steps">
-          <li>We review your message and reply within two business days.</li>
-          <li>A short call to understand your goals and constraints.</li>
-          <li>A clear proposal with scope, approach, and engagement options.</li>
+          <li>I read your message and reply within two business days.</li>
+          <li>A short call about your goals, tools and constraints.</li>
+          <li>If it fits, a fixed-price proposal for the assessment or a pilot.</li>
         </ol>
       </div>
       <p class="muted small">We work with clients in India and internationally.</p>

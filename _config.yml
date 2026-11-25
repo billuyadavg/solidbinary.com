@@ -1,6 +1,6 @@
 title: SolidBinary
 tagline: "Build Intelligent. Build Solid."
-description: "SolidBinary builds AI-powered business solutions, custom software, SaaS products, and Agentic AI workflows to help businesses automate operations and scale."
+description: "SolidBinary is a founder-led practice that builds AI agents for sales, support and back-office work, for small and mid-sized companies in India and internationally."
 url: "https://solidbinary.com"
 baseurl: ""
 lang: en
@@ -14,7 +14,30 @@ booking_url: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ
 form_endpoint: "https://script.google.com/macros/s/AKfycbw220tPfYmR6fEtrO_Km6aCKwjqffsItWIclJARuqMAuxouVPoe1zdcxWC-JHCD4Ak4/exec"
 # Optional social links
 linkedin_url: "https://www.linkedin.com/in/billuyadav/"
+
+# Starting price for the AI Opportunity Assessment, shown on its page and the
+# homepage, e.g. "From ₹1.5 lakh / US$2,000". Leave empty to show
+# "Fixed price, agreed after the free call".
+assessment_price: ""
+
+# Analytics. Fill in ONE of these to turn tracking on (both empty = no tracking).
+# Plausible needs no cookie banner; GA4 is free but sets cookies.
+# Events sent: book_call_click, inquiry_submitted, inquiry_failed.
+analytics:
+  plausible_domain: ""   # e.g. "solidbinary.com"
+  ga4_id: ""             # e.g. "G-XXXXXXXXXX"
 # --------------------------------------------------------------------------
+
+# Default social preview image and logo (used by jekyll-seo-tag and schema)
+image: /assets/img/og-default.png
+logo: /assets/img/logo-square.png
+social:
+  name: Billu Yadav
+  links:
+    - "https://www.linkedin.com/in/billuyadav/"
+author:
+  name: Billu Yadav
+  url: "https://billuyadav.com/"
 
 permalink: /insights/:year/:month/:title/
 timezone: Asia/Kolkata
@@ -36,6 +59,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-feed
+  - jekyll-redirect-from
 
 feed:
   path: insights/feed.xml

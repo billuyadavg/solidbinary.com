@@ -21,7 +21,20 @@
     }
   }
 
-  // Contact form: submit to Google Apps Script without leaving the page
+  // Analytics helper: works with Plausible or GA4 if either is configured, otherwise does nothing
+  function track(name) {
+    try {
+      if (window.plausible) window.plausible(name);
+      if (window.gtag) window.gtag('event', name);
+    } catch (e) {}
+  }
+  document.addEventListener('click', function (ev) {
+    var el = ev.target.closest ? ev.target.closest('[data-track]') : null;
+    if (el) track(el.getAttribute('data-track'));
+  });
+
+  // Contact form: submit to Google Apps Script without leaving the page.
+  // The script answers with JSON ({"ok": true}) and CORS headers, so failures are visible.
   var form = document.getElementById('inquiry-form');
   if (form && window.fetch && window.URLSearchParams) {
     form.addEventListener('submit', function (ev) {
@@ -29,20 +42,33 @@
       if (!form.reportValidity()) return;
       var btn = form.querySelector('button[type="submit"]');
       var status = form.querySelector('.form-status');
+      var fallback = form.querySelector('.form-fallback');
+      var label = btn.textContent;
       btn.disabled = true;
       btn.textContent = 'Sending…';
       status.textContent = '';
       var body = new URLSearchParams(new FormData(form));
-      fetch(form.action, { method: 'POST', mode: 'no-cors', body: body })
+      fetch(form.action, { method: 'POST', body: body })
+        .then(function (res) {
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          return res.text().then(function (text) {
+            var data = null;
+            try { data = JSON.parse(text); } catch (e) {}
+            if (data && data.ok === false) throw new Error(data.error || 'Rejected');
+          });
+        })
         .then(function () {
+          track('inquiry_submitted');
           form.hidden = true;
           var ok = document.getElementById('inquiry-success');
           if (ok) { ok.hidden = false; ok.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
         })
         .catch(function () {
+          track('inquiry_failed');
           btn.disabled = false;
-          btn.textContent = 'Submit Project Inquiry';
-          status.textContent = 'Something went wrong. Please check your connection and try again.';
+          btn.textContent = label;
+          status.textContent = "Sorry, your inquiry didn't go through. Please try again in a moment.";
+          if (fallback) fallback.hidden = false;
         });
     });
   }

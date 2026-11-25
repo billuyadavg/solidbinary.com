@@ -1,7 +1,7 @@
 <section class="section{% if include.alt %} section-alt{% endif %}" id="founder">
   <div class="container founder">
     <figure class="founder-photo">
-      <img src="https://billuyadav.com/billu-yadav.webp" alt="Billu Yadav, founder of SolidBinary" width="360" height="360" loading="lazy">
+      <img src="{{ '/assets/img/billu-yadav.webp' | relative_url }}" alt="Billu Yadav, founder of SolidBinary" width="360" height="360" loading="lazy">
       <figcaption><strong>Billu Yadav</strong><span>Founder · Ex-founding team, Zime.ai</span></figcaption>
     </figure>
     <div class="founder-body">
@@ -22,3 +22,8 @@
     </div>
   </div>
 </section>
+{% unless include.no_schema %}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Billu Yadav","jobTitle":"Founder","worksFor":{"@type":"Organization","name":"SolidBinary","url":{{ site.url | jsonify }}},"image":{{ '/assets/img/billu-yadav.webp' | absolute_url | jsonify }},"url":"https://billuyadav.com/","sameAs":["https://www.linkedin.com/in/billuyadav/","https://billuyadav.com/"],"address":{"@type":"PostalAddress","addressLocality":"Jaipur","addressCountry":"IN"}}
+</script>
+{% endunless %}

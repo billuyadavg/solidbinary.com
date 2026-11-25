@@ -1,16 +1,13 @@
-- name: IT & Software Companies
-  text: Product engineering, AI integrations, and development partnerships.
-- name: Healthcare
-  text: Administrative automation, document workflows, and operational systems.
-- name: Education
-  text: Learning platforms, intelligent assistants, and management software.
-- name: Financial Services
-  text: Workflow automation, document processing, and reporting systems.
-- name: E-commerce & Retail
-  text: Customer support automation, inventory workflows, and digital platforms.
-- name: Manufacturing & Logistics
-  text: Operational automation, reporting, and system integration.
-- name: Professional Services
-  text: Client management, internal automation, and knowledge systems.
-- name: Real Estate
-  text: Lead management, CRM integration, and workflow automation.
+- name: Sales and revenue teams
+  where: Zime.ai
+  text: Architected an AI revenue agent used by more than 100 sales teams, including calendar sync, Zoom and Teams recordings, transcripts and CRM sync.
+  link: /services/sales-lead-agents/
+  link_text: AI agents for sales and lead operations
+- name: Healthcare operations
+  where: Credihealth
+  text: Grew from senior engineer to engineering manager and led real-time booking integrations across hospitals, plus a tele-consultation platform with more than 500 doctors onboarded.
+  link: /services/document-automation/
+  link_text: AI for documents and back-office work
+- name: Travel
+  where: TravelTriangle
+  text: Built consumer travel products earlier in his career.

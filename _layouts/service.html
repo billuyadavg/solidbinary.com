@@ -1,14 +1,19 @@
 ---
 layout: default
 ---
+{% assign stage_label = "" %}
+{% case page.stage %}{% when 'find' %}{% assign stage_label = "Find" %}{% when 'build' %}{% assign stage_label = "Build" %}{% when 'run' %}{% assign stage_label = "Run" %}{% when 'engineering' %}{% assign stage_label = "Supporting capability" %}{% endcase %}
 <section class="page-hero">
   <div class="container narrow">
-    <p class="eyebrow"><a href="{{ '/services/' | relative_url }}">Services</a> / {{ page.short_title | default: page.title }}</p>
+    <p class="eyebrow"><a href="{{ '/services/' | relative_url }}">Services</a> / {{ stage_label }}</p>
     <h1>{{ page.title }}</h1>
     <p class="lead">{{ page.summary }}</p>
+    {% if page.stage == 'find' %}
+    <p class="price-note"><strong>{% if site.assessment_price != "" %}{{ site.assessment_price }}{% else %}Fixed price, agreed after the free call{% endif %}</strong> · typically about two weeks</p>
+    {% endif %}
     <div class="hero-actions">
-      <a class="btn btn-primary" href="{{ '/contact/' | relative_url }}?service={{ page.short_title | default: page.title | url_encode }}">Discuss Your Project</a>
-      {% if site.booking_url != "" %}<a class="btn btn-ghost" href="{{ '/book/' | relative_url }}">Book a call</a>{% endif %}
+      {% if site.booking_url != "" %}<a class="btn btn-primary" href="{{ '/book/' | relative_url }}" data-track="book_call_click">Book a free call</a>{% endif %}
+      <a class="btn btn-ghost" href="{{ '/contact/' | relative_url }}?service={{ page.short_title | default: page.title | url_encode }}">Send an inquiry</a>
     </div>
   </div>
 </section>
@@ -19,10 +24,13 @@ layout: default
       {{ content }}
     </div>
     <aside class="card">
-      <h2 class="card-h">Capabilities</h2>
+      <h2 class="card-h">{% if page.stage == 'find' %}What's included{% else %}Capabilities{% endif %}</h2>
       <ul class="check-list">
         {% for c in page.capabilities %}<li>{{ c }}</li>{% endfor %}
       </ul>
+      {% if page.stage == 'build' %}
+      <p class="muted small">Most projects start with the <a href="{{ '/services/ai-opportunity-assessment/' | relative_url }}">AI Opportunity Assessment</a>, then a fixed-scope pilot.</p>
+      {% endif %}
     </aside>
   </div>
 </section>
@@ -34,7 +42,7 @@ layout: default
       {% assign services = site.services | sort: 'order' %}
       {% for s in services %}{% if s.url != page.url %}
       <a class="card card-link" href="{{ s.url | relative_url }}">
-        <h3>{{ s.title }}</h3>
+        <h3>{{ s.short_title }}</h3>
         <p>{{ s.summary }}</p>
       </a>
       {% endif %}{% endfor %}
@@ -42,4 +50,8 @@ layout: default
   </div>
 </section>
 
-{% include cta.html title="Tell Us What You Want to Build." %}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Service","name":{{ page.title | jsonify }},"description":{{ page.description | jsonify }},"url":{{ page.url | absolute_url | jsonify }},"provider":{"@type":"Organization","name":"SolidBinary","url":{{ site.url | jsonify }}},"areaServed":["India","Worldwide"]}
+</script>
+
+{% include cta.html title="Tell us what you want to fix." %}

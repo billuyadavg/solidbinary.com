@@ -3,11 +3,11 @@
     <div class="cta-band">
       <div>
         <h2>{{ include.title | default: "Let's find your first AI win." }}</h2>
-        <p>{{ include.text | default: "Book a free 30-minute call, or tell us about your project in two minutes." }}</p>
+        <p>{{ include.text | default: "Book a free 30-minute call, or send a few lines about what you want to fix." }}</p>
       </div>
       <div class="cta-actions">
-        {% if site.booking_url != "" %}<a class="btn btn-primary" href="{{ '/book/' | relative_url }}">Book a free call</a>{% endif %}
-        <a class="btn btn-ghost" href="{{ '/contact/' | relative_url }}">{{ include.button | default: "Send a project inquiry" }}</a>
+        {% if site.booking_url != "" %}<a class="btn btn-primary" href="{{ '/book/' | relative_url }}" data-track="book_call_click">Book a free call</a>{% endif %}
+        <a class="btn btn-ghost" href="{{ '/contact/' | relative_url }}">Send an inquiry</a>
       </div>
     </div>
   </div>
