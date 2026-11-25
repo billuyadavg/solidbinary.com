@@ -13,8 +13,16 @@
   {% seo %}
   {% feed_meta %}
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Organization","name":"SolidBinary","url":"{{ site.url }}","slogan":"{{ site.tagline }}"}
+  {"@context":"https://schema.org","@type":"ProfessionalService","name":"SolidBinary","url":{{ site.url | jsonify }},"logo":{{ site.logo | absolute_url | jsonify }},"image":{{ site.image | absolute_url | jsonify }},"description":{{ site.description | jsonify }},"founder":{"@type":"Person","name":"Billu Yadav","url":"https://billuyadav.com/"},"address":{"@type":"PostalAddress","addressLocality":"Jaipur","addressRegion":"Rajasthan","addressCountry":"IN"},"areaServed":["India","Worldwide"],"sameAs":[{{ site.linkedin_url | jsonify }}],"knowsAbout":["AI agents","Agentic AI","Business process automation","Retrieval-augmented generation","Software engineering"]}
   </script>
+  {% if site.analytics.plausible_domain and site.analytics.plausible_domain != "" %}
+  <script defer data-domain="{{ site.analytics.plausible_domain }}" src="https://plausible.io/js/script.js"></script>
+  <script>window.plausible=window.plausible||function(){(window.plausible.q=window.plausible.q||[]).push(arguments)}</script>
+  {% endif %}
+  {% if site.analytics.ga4_id and site.analytics.ga4_id != "" %}
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.analytics.ga4_id }}"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','{{ site.analytics.ga4_id }}');</script>
+  {% endif %}
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>

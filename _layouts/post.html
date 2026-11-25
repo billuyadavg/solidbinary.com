@@ -4,7 +4,7 @@ layout: default
 <article>
   <section class="page-hero">
     <div class="container narrow">
-      <p class="eyebrow"><a href="{{ '/insights/' | relative_url }}">Insights</a> · {{ page.date | date: "%-d %B %Y" }}</p>
+      <p class="eyebrow"><a href="{{ '/insights/' | relative_url }}">Insights</a> · {{ page.date | date: "%-d %B %Y" }} · Billu Yadav</p>
       <h1>{{ page.title }}</h1>
       {% if page.description %}<p class="lead">{{ page.description }}</p>{% endif %}
     </div>
@@ -15,4 +15,7 @@ layout: default
     </div>
   </section>
 </article>
-{% include cta.html title="Exploring AI for your business?" text="We help teams find where AI creates real value, then build and run it." button="Discuss Your Project" %}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":{{ page.title | jsonify }},"description":{{ page.description | jsonify }},"datePublished":{{ page.date | date_to_xmlschema | jsonify }},"dateModified":{{ page.last_modified_at | default: page.date | date_to_xmlschema | jsonify }},"author":{"@type":"Person","name":"Billu Yadav","url":"https://billuyadav.com/"},"publisher":{"@type":"Organization","name":"SolidBinary","logo":{"@type":"ImageObject","url":{{ site.logo | absolute_url | jsonify }}}},"mainEntityOfPage":{{ page.url | absolute_url | jsonify }},"image":{{ page.image | default: site.image | absolute_url | jsonify }}}
+</script>
+{% include cta.html title="Wondering where AI would help in your business?" text="The AI Opportunity Assessment answers that in about two weeks, at a fixed price. Start with a free call." %}

@@ -1,16 +1,16 @@
 ---
 layout: default
 title: "Agentic AI, Software Development & Automation"
-description: "SolidBinary builds AI agents, custom software and automation that do real work in your business, for startups, SMEs and enterprises in India and worldwide."
+description: "SolidBinary builds AI agents for sales, support, documents and internal knowledge, for small and mid-sized companies in India and internationally. Start with a fixed-price assessment."
 ---
 <section class="hero">
   <div class="container hero-split">
     <div class="hero-copy">
-      <p class="eyebrow eyebrow-warm">Agentic AI · Product Engineering · Automation</p>
+      <p class="eyebrow eyebrow-warm">AI agents · Founder-led · India and international</p>
       <h1>AI agents and software that do real work in your business.</h1>
-      <p class="lead">We find the processes worth automating, build the agent or product, connect it to your tools, and keep improving it. For startups, SMEs and enterprises in India and worldwide.</p>
+      <p class="lead">We find the processes worth automating, build the agent, connect it to your tools, and keep improving it. For companies of roughly 20 to 500 people whose teams spend hours each week on work that follows a pattern.</p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="{{ '/book/' | relative_url }}">Book a free 30-min call</a>
+        <a class="btn btn-primary" href="{{ '/book/' | relative_url }}" data-track="book_call_click">Book a free call</a>
         <a class="btn btn-ghost" href="#start">See how projects start</a>
       </div>
     </div>
@@ -30,40 +30,31 @@ description: "SolidBinary builds AI agents, custom software and automation that 
 <section class="section" id="services">
   <div class="container">
     <p class="eyebrow eyebrow-warm">What we do</p>
-    <h2 class="section-title">Start with Agentic AI. We build everything around it.</h2>
+    <h2 class="section-title">Four jobs AI agents do well today.</h2>
+    <p class="muted section-intro">Each one starts as a small pilot on your own data, with a person approving anything that matters.</p>
     {% assign services = site.services | sort: 'order' %}
-    {% assign featured = services | first %}
-    <a class="featured-card" href="{{ featured.url | relative_url }}">
-      <div>
-        <p class="featured-label">Featured</p>
-        <h3>{{ featured.title }}</h3>
-        <p>{{ featured.summary }}</p>
-      </div>
-      <ul class="pill-row" aria-label="Examples">
-        <li>Support agents</li><li>RAG knowledge assistants</li><li>Document processing</li><li>Multi-agent workflows</li>
-      </ul>
-    </a>
-    <div class="grid grid-3">
-      {% for s in services offset: 1 %}
+    <div class="grid grid-4">
+      {% for s in services %}{% if s.stage == 'build' %}
       <a class="card card-link" href="{{ s.url | relative_url }}">
-        <h3>{{ s.title }}</h3>
+        <h3>{{ s.short_title }}</h3>
         <p>{{ s.summary }}</p>
       </a>
-      {% endfor %}
+      {% endif %}{% endfor %}
     </div>
+    <p class="muted services-more">Every project starts with the <a class="text-link" href="{{ '/services/ai-opportunity-assessment/' | relative_url }}">AI Opportunity Assessment</a>, and <a class="text-link" href="{{ '/services/agent-care/' | relative_url }}">Agent care</a> keeps agents working after launch. Need software around the AI? See <a class="text-link" href="{{ '/services/product-engineering/' | relative_url }}">Product engineering</a>.</p>
   </div>
 </section>
 
 <section class="section section-alt" id="start">
   <div class="container">
     <p class="eyebrow eyebrow-warm">How projects start</p>
-    <h2 class="section-title">Small first step. Clear decision. Then build.</h2>
+    <h2 class="section-title">Small first step, clear decision, then build.</h2>
     <div class="grid grid-3">
       <div class="card"><p class="step-num">01 · Free call</p><h3>30-minute business discussion</h3><p>Your goals, current tools and where time is lost. No cost, no obligation.</p></div>
-      <div class="card"><p class="step-num">02 · Assessment</p><h3>AI opportunity assessment</h3><p>A short, fixed-scope review that ranks opportunities and recommends what to build first.</p></div>
+      <div class="card"><p class="step-num">02 · Assessment</p><h3>AI Opportunity Assessment</h3><p>About two weeks, fixed price{% if site.assessment_price != "" %} ({{ site.assessment_price }}){% endif %}. Ranks opportunities and recommends what to build first. <a class="text-link" href="{{ '/services/ai-opportunity-assessment/' | relative_url }}">What's included →</a></p></div>
       <div class="card"><p class="step-num">03 · Pilot, then scale</p><h3>Fixed-scope pilot</h3><p>One workflow, built and measured on your real data before any larger commitment.</p></div>
     </div>
-    <p class="center"><a class="text-link" href="{{ '/our-approach/' | relative_url }}">See our full process and engagement models →</a></p>
+    <p class="center"><a class="text-link" href="{{ '/our-approach/' | relative_url }}">How an engagement runs, step by step →</a></p>
   </div>
 </section>
 
@@ -80,5 +71,14 @@ description: "SolidBinary builds AI agents, custom software and automation that 
     </div>
   </div>
 </section>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Do you work with clients outside India?","acceptedAnswer":{"@type":"Answer","text":"Yes. We work remotely with clients in India and internationally, with overlapping working hours."}},
+{"@type":"Question","name":"How much does a project cost?","acceptedAnswer":{"@type":"Answer","text":"It depends on scope. Most clients start with a small fixed-price assessment or pilot, so you know the cost before committing further."}},
+{"@type":"Question","name":"Who owns the code and data?","acceptedAnswer":{"@type":"Answer","text":"You do. Code, documentation and your data stay yours."}},
+{"@type":"Question","name":"Is it safe to let AI act in our systems?","acceptedAnswer":{"@type":"Answer","text":"Agents get only the access a task needs, every action is logged, and important steps wait for human approval."}}
+]}
+</script>
 
 {% include cta.html %}

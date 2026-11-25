@@ -1,20 +1,29 @@
 ---
-title: Industries
+title: Where we've worked
 permalink: /industries/
-description: AI, automation, and software solutions adapted to IT, healthcare, education, financial services, e-commerce, logistics, professional services, and real estate.
-eyebrow: Industries
-hero_title: Technology That Adapts to Your Industry.
-lead: We design solutions around the workflows, operational requirements, and technology challenges of each organization. These are industries we're equipped to serve.
+description: The industries behind SolidBinary's experience, from Billu Yadav's roles at Zime.ai, Credihealth and TravelTriangle, and how that applies to your business.
+eyebrow: Experience
+hero_title: Where we've worked, and where we can help.
+lead: These are the areas Billu has built products in, from his roles before SolidBinary. They are not SolidBinary client projects; those will be listed here as they are completed and approved.
 ---
 <section class="section">
-  <div class="container grid grid-2">
+  <div class="container grid grid-3">
     {% for ind in site.data.industries %}
     <div class="card">
+      <p class="step-num">{{ ind.where }}</p>
       <h2 class="card-h">{{ ind.name }}</h2>
       <p>{{ ind.text }}</p>
+      {% if ind.link %}<p><a class="text-link" href="{{ ind.link | relative_url }}">Related: {{ ind.link_text }} →</a></p>{% endif %}
     </div>
     {% endfor %}
   </div>
 </section>
 
-{% include cta.html title="Don't see your industry?" text="Our approach starts with your workflows, so it carries across sectors. Tell us about yours." button="Start a Conversation" %}
+<section class="section section-alt">
+  <div class="container narrow center">
+    <h2 class="section-title">Working in another industry?</h2>
+    <p class="lead">The work we automate, such as answering enquiries, sorting tickets, reading documents and finding information, looks similar across industries. The assessment checks whether it fits yours before you commit to anything.</p>
+  </div>
+</section>
+
+{% include cta.html title="Tell us where your team loses time." %}

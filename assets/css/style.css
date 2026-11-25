@@ -144,9 +144,9 @@ p { margin: 0 0 1em; }
 .service-row { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 40px; background: var(--navy-600); border: 1px solid var(--line); border-radius: var(--radius); padding: 32px; }
 .service-head { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 20px; }
 .service-head .card-num { position: static; display: block; margin-bottom: 6px; }
-.service-row h2 { font-size: 1.5rem; }
-.service-row h2 a { color: var(--white); }
-.service-row h2 a:hover { color: var(--cyan); }
+.service-row h2, .service-row h3 { font-size: 1.5rem; }
+.service-row h2 a, .service-row h3 a { color: var(--white); }
+.service-row h2 a:hover, .service-row h3 a:hover { color: var(--cyan); }
 
 /* Prose */
 .prose h2 { font-size: 1.6rem; margin-top: 1.6em; }
@@ -253,7 +253,7 @@ p { margin: 0 0 1em; }
 
 /* Reveal animation */
 @media (prefers-reduced-motion: no-preference) {
-  .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+  .reveal { opacity: 0.6; transform: translateY(8px); transition: opacity .35s ease, transform .35s ease; }
   .reveal.is-visible { opacity: 1; transform: none; }
 }
 
@@ -331,3 +331,16 @@ p { margin: 0 0 1em; }
 [data-theme="light"] .solution-table th { background: #F8FAFC; }
 [data-theme="light"] .section-alt .card, [data-theme="light"] .section-alt .faq details, [data-theme="light"] .section-alt .founder-stats li { background: #FFFFFF; }
 [data-theme="light"] .card, [data-theme="light"] .service-row, [data-theme="light"] .process-step, [data-theme="light"] .steps li, [data-theme="light"] .founder-stats li, [data-theme="light"] .faq details { box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04); }
+
+/* ---- Audit update (Nov 2026) -------------------------------------------- */
+.stage-title { margin-top: 48px; font-size: clamp(1.4rem, 2.4vw, 1.8rem); }
+.service-list > .stage-title:first-child { margin-top: 0; }
+.service-list .section-intro { margin-bottom: 8px; }
+.price-note { margin-top: 18px; color: var(--text); }
+.price-note strong { color: var(--white); }
+.grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 1100px) { .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 720px) { .grid-4 { grid-template-columns: minmax(0, 1fr); } }
+.services-more { margin-top: 28px; }
+.fit-list li::marker { color: var(--muted); }
+.form-fallback { margin-top: 10px; }

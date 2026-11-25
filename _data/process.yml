@@ -1,18 +1,15 @@
-- short: Discover
-  title: Discovery & Understanding
-  text: We understand your business, goals, challenges, and current technology environment.
-- short: Strategize
-  title: Strategy & Planning
-  text: We identify opportunities, recommend solutions, define the technical architecture, and establish an execution roadmap.
-- short: Design & Build
-  title: Design & Development
-  text: We design and engineer the product, application, or AI workflow.
-- short: Implement
-  title: Integration & Implementation
-  text: We connect the solution with your existing systems and deploy it into your operating environment.
-- short: Validate
-  title: Testing & Validation
-  text: We validate functionality, performance, security, and business requirements.
-- short: Optimize
-  title: Optimization & Growth
-  text: We continuously improve, maintain, and scale the solution as your business evolves.
+- short: Free call
+  title: Free 30-minute call
+  text: Your goals, current tools, and where time is lost. No cost, no obligation.
+- short: Assessment
+  title: AI Opportunity Assessment (about 2 weeks, fixed price)
+  text: Interviews with the people doing the work, a review of systems and data, and a ranked shortlist with a recommended first pilot.
+- short: Pilot
+  title: Pilot (typically 3–6 weeks)
+  text: One workflow built on your real data and measured against the baseline agreed in the assessment.
+- short: Decide
+  title: Roll out or stop
+  text: If the numbers hold, we take it live and add the next workflow. If they don't, you have a clear answer and nothing left half-built.
+- short: Agent care
+  title: Agent care (monthly)
+  text: Monitoring, evaluation, updates and a monthly report.
