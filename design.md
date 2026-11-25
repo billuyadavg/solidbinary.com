@@ -155,6 +155,7 @@ Icons are inline stroke SVGs (`_includes/icon.html`), 24px, using `currentColor`
 | Our Approach | `/our-approach/` | 6-step process and engagement models (`#engagement`) |
 | Insights | `/insights/` | Blog index; posts at `/insights/YYYY/MM/title/` |
 | Contact | `/contact/` | Inquiry form, booking link, what happens next |
+| Book a Call | `/book/` | Embedded Google Calendar booking page (iframe) |
 | Privacy / Terms | `/privacy/`, `/terms/` | Legal summaries |
 | 404 | `/404.html` | Not-found page |
 
@@ -165,7 +166,7 @@ Icons are inline stroke SVGs (`_includes/icon.html`), 24px, using `currentColor`
 ## 6. Conversion design
 
 - **Primary CTA everywhere:** "Discuss Your Project" → `/contact/`.
-- **Secondary CTA:** "Book a call" → Google Calendar booking page (shown only when `booking_url` is set).
+- **Secondary CTA:** "Book a call" → `/book/`, which embeds the Google Calendar booking page (shown only when `booking_url` is set).
 - Service pages link to the contact page with `?service=<name>`, which preselects the service in the form.
 - Every page ends with a CTA band.
 
@@ -211,7 +212,7 @@ Google Apps Script web app ("SolidBinary Contact Form", runs as owner)
 - Limit: about 100 notification emails per day (Google quota); rows are always saved even if email fails.
 - Endpoint: `form_endpoint` in `_config.yml`. Update the script via **Deploy → Manage deployments → Edit → New version** to keep the same URL.
 
-**Booking:** Google Calendar appointment schedule "SolidBinary Business Discussion": 30 min, weekdays 9:00–17:00 IST, Google Meet, busy times blocked. URL: `booking_url` in `_config.yml`.
+**Booking:** Google Calendar appointment schedule "SolidBinary Business Discussion": 30 min, weekdays 9:00–17:00 IST, Google Meet, busy times blocked. URL: `booking_url` in `_config.yml`. Embedded on `/book/` as an iframe using Google's embed mode (`?gv=true`), with a "open in a new tab" fallback link below it.
 
 The site shows no public email address by design.
 

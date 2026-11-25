@@ -8,7 +8,7 @@ layout: default
     <p class="lead">{{ page.summary }}</p>
     <div class="hero-actions">
       <a class="btn btn-primary" href="{{ '/contact/' | relative_url }}?service={{ page.short_title | default: page.title | url_encode }}">Discuss Your Project</a>
-      {% if site.booking_url != "" %}<a class="btn btn-ghost" href="{{ site.booking_url }}" target="_blank" rel="noopener">Book a call</a>{% endif %}
+      {% if site.booking_url != "" %}<a class="btn btn-ghost" href="{{ '/book/' | relative_url }}">Book a call</a>{% endif %}
     </div>
   </div>
 </section>
